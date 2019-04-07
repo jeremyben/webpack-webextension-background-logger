@@ -1,8 +1,10 @@
 {
 	"compilerOptions": {
 		"target": "es6",
-		"checkJs": true
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"checkJs": true,
+		"allowJs": true
 	},
-	"include": ["src/**/*"],
-	"exclude": ["node_modules"]
+	"include": ["src/**/*", "__test__/**/*"]
 }

@@ -17,12 +17,17 @@
 		"mozilla",
 		"extension"
 	],
+	"scripts": {
+		"test": "webpack --config __test__/webpack.config.js"
+	},
 	"dependencies": {
 		"string-replace-loader": "^2.1.1",
-		"webpack": "^4.28.3",
-		"webpack-inject-plugin": "^1.0.2"
+		"webpack": "^4.29.6",
+		"webpack-inject-plugin": "^1.1.2"
 	},
 	"devDependencies": {
-		"@types/chrome": "^0.0.77"
+		"@types/chrome": "^0.0.81",
+		"copy-webpack-plugin": "^5.0.2",
+		"webpack-cli": "^3.3.0"
 	}
 }

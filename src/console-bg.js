@@ -1,12 +1,12 @@
 exports.consoleBg = function(...message) {
 	try {
-		;(window.chrome || /** @type {typeof chrome}*/ (window.browser)).runtime.sendMessage({
+		;(window.chrome || window.browser).runtime.sendMessage({
 			__console_bg__: message.map(stringifyFunctions),
 		})
 	} catch (error) {
 		// Handle circular refs (useful for DOM nodes)
 		if (error.message.indexOf('circular') > -1) {
-			;(window.chrome || /** @type {typeof chrome}*/ (window.browser)).runtime.sendMessage({
+			;(window.chrome || window.browser).runtime.sendMessage({
 				__console_bg__: message.map(stringifyFunctions).map(removeCircularRefs),
 			})
 		} else {
