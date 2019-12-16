@@ -1,6 +1,6 @@
 {
 	"name": "webpack-webextension-background-logger",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Centralize console logs in background page (web/chrome extensions)",
 	"author": "Jeremy Bensimon",
 	"repository": "github:jeremyben/webpack-webextension-background-logger",
