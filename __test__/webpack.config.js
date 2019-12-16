@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const Copy = require('copy-webpack-plugin')
 const BackgroundLogger = require('../src/main')
+const ChromeLauncher = require('webpack-chrome-extension-launcher')
 
 const src = (path = '') => resolve(__dirname, 'src', path)
 const dist = resolve(__dirname, 'dist')
@@ -26,6 +27,7 @@ module.exports = (env, argv) => {
 		devtool: isDev ? 'inline-source-map' : false,
 		plugins: [
 			new BackgroundLogger({ revertToLog: isProd }),
+			new ChromeLauncher(),
 			// @ts-ignore
 			new Copy([src('options.html'), src('popup.html'), src('manifest.json')]),
 		],
