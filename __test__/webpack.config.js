@@ -27,9 +27,9 @@ module.exports = (env, argv) => {
 		devtool: isDev ? 'inline-source-map' : false,
 		plugins: [
 			new BackgroundLogger({ revertToLog: isProd }),
-			new ChromeLauncher(),
+			new ChromeLauncher({ launchURL: 'https://www.google.com/' }),
 			// @ts-ignore
-			new Copy([src('options.html'), src('popup.html'), src('manifest.json')]),
+			new Copy({ patterns: [src('options.html'), src('popup.html'), src('manifest.json')] }),
 		],
 	}
 }
